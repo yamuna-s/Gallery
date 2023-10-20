@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallary using javascript</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body>
+    <section class="p-10 bg-gradient-to-r from-black to-white bg-cover min-h-screen">
+        <div class="xl:pl-32 xl:pt-0 m-0 outline-0 md:p-0 sm:p-0 p-0 ">
+            <h1 class="text-center font-bold text-white text-3xl mb-8">Flowers Gallary</h1>
+    <div class="2xl:grid 2xl:grid-cols-5 2xl:grid-flow-row 2xl:gap-x-0 xl:grid xl:grid-cols-4 xl:grid-flow-row xl:gap-x-0 md:grid md:grid-cols-3 md:grid-flow-row grid grid-cols-2 grid-flow-row gap-y-9  md:gap-x-4 gap-x-4 outline-0">
+        <div >
+          <img src="image1.webp" onclick="openModal();currentSlide(1)"  width="200px" height="250px" class="slide rounded-2xl hover:scale-90 hover:duration-300 hover:delay-150"  class="hover-shadow">
+        </div>
+        <div >
+          <img src="image2.webp" onclick="openModal();currentSlide(2)"  width="200px" height="250px" class="slide rounded-2xl hover:scale-90 hover:duration-300 hover:delay-150"  class="hover-shadow">
+        </div>
+        <div >
+          <img src="image3.webp" onclick="openModal();currentSlide(3)"  width="200px" height="250px" class="slide rounded-2xl hover:scale-90 hover:duration-300 hover:delay-150"  class="hover-shadow">
+        </div>
+        <div >
+          <img src="image4.webp" onclick="openModal();currentSlide(4)"  width="200px" height="250px" class="slide rounded-2xl hover:scale-90 hover:duration-300 hover:delay-150"  class="hover-shadow">
+        </div>
+        <div >
+            <img src="image5.jpeg" onclick="openModal();currentSlide(4)"  width="200px" height="250px" class="slide rounded-2xl hover:scale-90 hover:duration-300 hover:delay-150"  class="hover-shadow">
+        </div>
+        <div >
+            <img src="image6.webp" onclick="openModal();currentSlide(4)"  width="200px" height="250px" class="slide rounded-2xl hover:scale-90 hover:duration-300 hover:delay-150"  class="hover-shadow">
+        </div>
+        <div >
+            <img src="image7.webp" onclick="openModal();currentSlide(4)"  width="200px" height="250px" class="slide rounded-2xl hover:scale-90 hover:duration-300 hover:delay-150"  class="hover-shadow">
+        </div>
+        <div >
+          <img src="image8.webp" onclick="openModal();currentSlide(4)"  width="200px" height="250px" class="slide rounded-2xl hover:scale-90 hover:duration-300 hover:delay-150"  class="hover-shadow">
+        </div>
+      </div>
+        </div>
+      
+      <div id="myModal" class=" hidden fixed top-0 left-0 z-80 w-screen h-screen bg-black/75">
+        <span class="close cursor  text-white  font-bold text-5xl z-90 fixed top-2 right-2" onclick="closeModal()">&times;</span>
+        <a class="  text-white  font-bold text-5xl z-90 fixed top-80 xl:ml-56 md:ml-32 ml-10"  onclick="plusSlides(-1)">&#10094;</a>
+        <a class="  text-white  font-bold text-5xl z-90 fixed right-0 top-80 xl:mr-56 md:mr-32 mr-10" onclick="plusSlides(1)">&#10095;</a>
+        <div >
+      
+          <div class="mySlides">
+            <img src="image1.webp" class="h-screen mx-auto">
+          </div>
+      
+          <div class="mySlides">
+            <img src="image2.webp" class="h-screen mx-auto">
+          </div>
+      
+          <div class="mySlides">
+            <img src="image3.webp" class="h-screen mx-auto">
+          </div>
+      
+          <div class="mySlides">
+            <img src="image4.webp" class="h-screen mx-auto">
+          </div>
+
+          <div class="mySlides">
+            <img src="image5.jpeg" class="h-screen mx-auto">
+          </div>
+
+          <div class="mySlides">
+            <img src="image6.webp" class="h-screen mx-auto">
+          </div>
+
+          <div class="mySlides">
+            <img src="image7.webp" class="h-screen mx-auto">
+          </div>
+
+          <div class="mySlides">
+            <img src="image8.webp" class="h-screen mx-auto">
+          </div>
+        </div>
+    </div>  
+
+</section>
+<script>
+function openModal() {
+    document.getElementById("myModal").style.display = "block";
+  }
+  
+  function closeModal() {
+    document.getElementById("myModal").style.display = "none";
+  }
+  
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  
+
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+  
+ 
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+  }
+  </script>
+       
+</body>
+</html>
